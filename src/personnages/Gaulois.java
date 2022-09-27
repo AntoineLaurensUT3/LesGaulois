@@ -38,12 +38,17 @@ public class Gaulois {
 		romain.recevoirCoup(force/3);
 	}
 		
+	public void boirePotion(int forcePotion) {
+		effetPotion+=forcePotion;
+		parler("Merci Druide, je sens que ma force est "+ forcePotion +" fois decuplée");
+	}
 	
 	
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);
 		System.out.println(asterix.getNom());
-		
+		int popo=4;
+		asterix.boirePotion(popo);
 	}
 		
 }
