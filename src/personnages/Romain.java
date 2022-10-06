@@ -1,10 +1,12 @@
 package personnages;
 
 public class Romain {
+	
 	private String nom;
 	private int force;
 	
 	public Romain(String nom, int force) {
+		assert force>0 : "Force doit etre >0";
 		this.nom = nom;
 		this.force = force;
 	}
@@ -25,11 +27,21 @@ public class Romain {
 	
 	
 	public void recevoirCoup(int forceCoup) {
+		assert force>0 : "Force doit etre >0";
+		int forceInitiale = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert forceInitiale>force : "la force du romain doit diminuer";
 	}
+	
+	
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus",6);
+		minus.parler("salut");
+	}
+	
 }
